@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mantar Ofisi | Mantarı üret, bilgiyi büyüt.</title>
+<meta name="description" content="Mantar Ofisi: Mantar yetiştiriciliği, üretim teknikleri, eğitim, danışmanlık ve sektörel bilgi platformu.">
+<style>
+:root{
+--green:#244b38;
+--green2:#376b4b;
+--cream:#f5f3eb;
+--white:#ffffff;
+--text:#203329;
+--muted:#667568;
+--line:#e2e7df;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:var(--cream);
+color:var(--text);
+}
+a{text-decoration:none;color:inherit}
+.topbar{
+background:var(--green);
+color:#fff;
+padding:12px 6%;
+font-size:13px;
+letter-spacing:.5px;
+}
+header{
+background:#fff;
+position:sticky;
+top:0;
+z-index:10;
+box-shadow:0 2px 15px #00000008;
+}
+.nav{
+max-width:1200px;
+margin:auto;
+padding:18px 5%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:20px;
+}
+.logo{
+font-size:24px;
+font-weight:800;
+color:var(--green);
+letter-spacing:1px;
+}
+.logo span{color:#8b9c7b}
+.menu{
+display:flex;
+gap:24px;
+align-items:center;
+font-size:14px;
+font-weight:600;
+}
+.menu a:hover{color:var(--green2)}
+.btn{
+display:inline-block;
+padding:13px 20px;
+border-radius:8px;
+background:var(--green);
+color:white;
+font-weight:bold;
+font-size:14px;
+transition:.2s;
+}
+.btn:hover{background:var(--green2);transform:translateY(-2px)}
+.btn.light{
+background:white;
+color:var(--green);
+border:1px solid var(--line);
+}
+.hero{
+background:linear-gradient(120deg,#1d3e2e,#42694b);
+color:white;
+padding:85px 6%;
+}
+.hero-inner{
+max-width:1200px;
+margin:auto;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:50px;
+align-items:center;
+}
+.tag{
+display:inline-block;
+border:1px solid #ffffff40;
+padding:8px 13px;
+border-radius:50px;
+font-size:12px;
+letter-spacing:1px;
+margin-bottom:20px;
+}
+.hero h1{
+font-size:clamp(38px,6vw,68px);
+line-height:1.05;
+margin:0 0 20px;
+letter-spacing:-2px;
+}
+.hero h1 span{color:#c5d6b9}
+.hero p{
+font-size:18px;
+line-height:1.7;
+color:#e2e9df;
+max-width:560px;
+}
+.hero-actions{
+display:flex;
+gap:12px;
+flex-wrap:wrap;
+margin-top:30px;
+}
+.hero-image{
+min-height:340px;
+border-radius:24px;
+background:
+linear-gradient(0deg,#142c20aa,#142c2010),
+url('https://images.unsplash.com/photo-1504545102780-26774c1bb073?auto=format&fit=crop&w=1200&q=85');
+background-position:center;
+background-size:cover;
+box-shadow:0 20px 50px #0003;
+}
+section{padding:75px 6%}
+.container{max-width:1200px;margin:auto}
+.section-head{
+max-width:700px;
+margin-bottom:35px;
+}
+.eyebrow{
+color:var(--green2);
+font-size:12px;
+font-weight:800;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+.section-head h2{
+font-size:clamp(28px,4vw,42px);
+margin:12px 0;
+letter-spacing:-1px;
+}
+.section-head p{
+color:var(--muted);
+font-size:16px;
+line-height:1.7;
+}
+.cards{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.card{
+background:white;
+border:1px solid var(--line);
+border-radius:16px;
+padding:28px;
+transition:.2s;
+}
+.card:hover{
+transform:translateY(-4px);
+box-shadow:0 12px 35px #1c38220c;
+}
+.icon{
+width:48px;height:48px;
+border-radius:13px;
+display:flex;align-items:center;justify-content:center;
+background:#edf3e9;
+font-size:24px;
+margin-bottom:20px;
+}
+.card h3{font-size:20px;margin:0 0 12px}
+.card p{color:var(--muted);line-height:1.7;font-size:14px}
+.card a{
+display:inline-block;
+margin-top:12px;
+color:var(--green2);
+font-weight:bold;
+font-size:14px;
+}
+.academy{
+background:#e9eee5;
+}
+.academy-inner{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+align-items:center;
+}
+.academy-visual{
+background:var(--green);
+color:white;
+border-radius:22px;
+padding:38px;
+min-height:300px;
+display:flex;
+flex-direction:column;
+justify-content:center;
+}
+.academy-visual .big{
+font-size:64px;
+margin-bottom:12px;
+}
+.academy-visual h3{font-size:28px;margin:0 0 10px}
+.academy-visual p{color:#dce8da;line-height:1.7}
+.academy-text h2{
+font-size:38px;
+letter-spacing:-1px;
+}
+.academy-text p{
+color:var(--muted);
+line-height:1.8;
+}
+.features{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:12px;
+margin:25px 0;
+}
+.feature{
+background:white;
+padding:15px;
+border-radius:10px;
+font-size:14px;
+}
+.feature strong{color:var(--green)}
+.banner{
+background:var(--green);
+color:white;
+border-radius:20px;
+padding:45px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:30px;
+}
+.banner h2{margin:0 0 12px;font-size:32px}
+.banner p{color:#dce8da;line-height:1.6;margin:0}
+.banner .btn{background:white;color:var(--green);white-space:nowrap}
+footer{
+background:#193326;
+color:white;
+padding:45px 6%;
+}
+.footer-inner{
+max-width:1200px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+gap:30px;
+flex-wrap:wrap;
+}
+footer p{color:#b9c8bc;line-height:1.6;font-size:14px}
+.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:14px}
+.copyright{
+border-top:1px solid #ffffff20;
+margin-top:30px;
+padding-top:20px;
+color:#aebeb2;
+font-size:12px;
+}
+@media(max-width:800px){
+.nav{flex-wrap:wrap}
+.menu{
+width:100%;
+overflow-x:auto;
+gap:18px;
+padding:5px 0;
+font-size:13px;
+}
+.hero{padding:55px 6%}
+.hero-inner,.academy-inner{grid-template-columns:1fr}
+.hero-image{min-height:250px}
+.cards{grid-template-columns:1fr}
+section{padding:55px 6%}
+.banner{padding:30px;flex-direction:column;align-items:flex-start}
+.banner h2{font-size:27px}
+.academy-visual{min-height:230px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+MANTAR ÜRETİMİ • EĞİTİM • DANIŞMANLIK • BİLGİ
+</div>
+
+<header>
+<nav class="nav">
+<a class="logo" href="#">MANTAR <span>OFİSİ</span></a>
+<div class="menu">
+<a href="#akademi">Akademi</a>
+<a href="#bilgi">Bilgi Merkezi</a>
+<a href="#uretim">Üretim</a>
+<a href="#danismanlik">Danışmanlık</a>
+</div>
+</nav>
+</header>
+
+<main>
+<section class="hero">
+<div class="hero-inner">
+<div>
+<div class="tag">MANTAR SEKTÖRÜNÜN DİJİTAL PLATFORMU</div>
+<h1>Mantarı üret,<br><span>bilgiyi büyüt.</span></h1>
+<p>Mantar yetiştiriciliğine dair bilgi, deneyim, eğitim ve üretim çözümleri tek bir noktada.</p>
+<div class="hero-actions">
+<a class="btn" href="#bilgi">Bilgi Merkezini keşfet</a>
+<a class="btn light" href="#akademi">Mantar Akademi</a>
+</div>
+</div>
+<div class="hero-image" aria-label="Mantar yetiştiriciliği"></div>
+</div>
+</section>
+
+<section id="bilgi">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">Bilgi ve deneyim</div>
+<h2>Mantar dünyasını keşfet</h2>
+<p>Üretimin farklı aşamalarında ihtiyaç duyabileceğin bilgiler, teknik içerikler ve uygulamaya yönelik kaynaklar.</p>
+</div>
+<div class="cards">
+<div class="card">
+<div class="icon">🍄</div>
+<h3>Üretim Rehberi</h3>
+<p>Komposttan örtü toprağına, misel gelişiminden hasada kadar üretimin temel aşamaları.</p>
+<a href="#uretim">İçerikleri keşfet →</a>
+</div>
+<div class="card">
+<div class="icon">🌡️</div>
+<h3>İklim ve Kontrol</h3>
+<p>Sıcaklık, nem, CO₂, havalandırma ve üretim ortamı yönetimi hakkında bilgiler.</p>
+<a href="#uretim">İklim konularını incele →</a>
+</div>
+<div class="card">
+<div class="icon">🔬</div>
+<h3>Hastalık ve Zararlılar</h3>
+<p>Üretimde karşılaşılan sorunları tanımak, gözlemlemek ve doğru mücadele yaklaşımını öğrenmek.</p>
+<a href="#uretim">Sorunları tanı →</a>
+</div>
+</div>
+</div>
+</section>
+
+<section class="academy" id="akademi">
+<div class="container academy-inner">
+<div class="academy-visual">
+<div class="big">🎓</div>
+<h3>Mantar Akademi</h3>
+<p>Bilgini geliştir. Üretimini güçlendir. Sektörde fark yarat.</p>
+</div>
+<div class="academy-text">
+<div class="eyebrow">Eğitim platformu</div>
+<h2>Öğrenmenin yeni adresi</h2>
+<p>Mantar üretimine yeni başlayanlar ve üretimini geliştirmek isteyenler için eğitim içerikleri, video dersler ve uygulamaya yönelik bilgiler.</p>
+<div class="features">
+<div class="feature">✓ <strong>Video eğitimler</strong></div>
+<div class="feature">✓ <strong>Uygulamalı anlatım</strong></div>
+<div class="feature">✓ <strong>PDF eğitim notları</strong></div>
+<div class="feature">✓ <strong>Yeni eğitim programları</strong></div>
+</div>
+<a class="btn" href="#iletisim">Eğitimler hakkında bilgi al</a>
+</div>
+</div>
+</section>
+
+<section id="uretim">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">Üretim</div>
+<h2>Bilgiyi sahaya taşı</h2>
+<p>Mantar yetiştiriciliği yalnızca üretim değil; doğru planlama, teknik takip, hijyen ve sürekli gelişim sürecidir.</p>
+</div>
+<div class="cards">
+<div class="card">
+<div class="icon">🌱</div>
+<h3>Yetiştiricilik</h3>
+<p>Kültür mantarı yetiştiriciliği, üretim döngüsü ve uygulama süreçlerine dair içerikler.</p>
+</div>
+<div class="card">
+<div class="icon">🏭</div>
+<h3>Tesis ve Planlama</h3>
+<p>Üretim alanı, oda düzeni, ekipman, iş akışı ve işletme planlamasına dair bilgiler.</p>
+</div>
+<div class="card">
+<div class="icon">📈</div>
+<h3>Verim ve Kalite</h3>
+<p>Üretim takibi, kalite değerlendirme, verimlilik ve süreç iyileştirme yaklaşımları.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="danismanlik">
+<div class="container">
+<div class="banner">
+<div>
+<h2>Üretimin için doğru bilgiye ulaş.</h2>
+<p>Üretim süreçleri, tesis planlama ve teknik konular için danışmanlık hakkında iletişime geç.</p>
+</div>
+<a class="btn" href="#iletisim">İletişime geç →</a>
+</div>
+</div>
+</section>
+
+<section id="iletisim">
+<div class="container">
+<div class="section-head">
+<div class="eyebrow">İletişim</div>
+<h2>Mantar Ofisi ile iletişim</h2>
+<p>Eğitim, içerik, danışmanlık ve iş birlikleri için iletişim kanallarımız yakında burada yer alacak.</p>
+</div>
+<div class="card">
+<div class="icon">✉️</div>
+<h3>İş birliği ve danışmanlık</h3>
+<p>Mantar sektörüyle ilgili proje, eğitim ve iş birliği taleplerini Mantar Ofisi üzerinden paylaşabilirsin.</p>
+</div>
+</div>
+</section>
+</main>
+
+<footer>
+<div class="footer-inner">
+<div>
+<a class="logo" href="#" style="color:white">MANTAR OFİSİ</a>
+<p>Mantarı üret, bilgiyi büyüt.<br>Mantar sektörüne yönelik bilgi ve gelişim platformu.</p>
+</div>
+<div class="footer-links">
+<a href="#akademi">Mantar Akademi</a>
+<a href="#bilgi">Bilgi Merkezi</a>
+<a href="#uretim">Üretim</a>
+<a href="#danismanlik">Danışmanlık</a>
+</div>
+</div>
+<div class="copyright">
+© 2026 Mantar Ofisi • Tüm hakları saklıdır.
+</div>
+</footer>
+
+</body>
+</html>
